@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:10.3
+    container_name: db-tugether
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: wetaka2539
+    ports:
+      - 5432:5432
+  admin:
+    image: adminer
+    container_name: db-adminer-tugether
+    restart: always
+    ports:
+      - 8008:8080
+    depends_on:
+     - db
+
+networks:
+  default:
