@@ -19,6 +19,8 @@ services:
       - 8008:8080
     depends_on:
      - db
+    networks:
+       - overlay
 
 networks:
   default:
